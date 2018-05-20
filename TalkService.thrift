@@ -117,7 +117,13 @@ enum ErrorCode {
 	DUPLICATED = 106,
 	BANNED = 107,
 }
-
+struct Location {
+	1: string title;
+	2: string address;
+	3: double latitude;
+	4: double longitude;
+	5: string phone;
+}
 enum PendingAgreements {
     ACCOUNT_MIGRATION_PINCODE = 28, 
     AGREEMENT_AD_BY_WEB_ACCESS = 48, 
@@ -768,7 +774,7 @@ struct Message {
 	5: i64 createdTime;
 	6: i64 deliveredTime;
 	10: string text;
-	#11: Location location;
+	11: Location location;
 	14: bool hasContent;
 	15: ContentType contentType;
 	17: binary contentPreview;
